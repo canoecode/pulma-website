@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Solution – Pulma</title>
-  <meta name="description" content="How Pulma works: a handheld breath-analysis device and mobile app that turn a 10-second breath sample into a lung cancer risk result.">
+  <meta name="description" content="Inside Pulma: an exploded view of the breath-analysis device, and how one breath becomes a result in the app.">
   <link rel="icon" href="/favicon.ico" sizes="48x48">
   <link rel="icon" type="image/png" sizes="192x192" href="/images/favicon-192.png">
   <link rel="icon" type="image/png" sizes="48x48" href="/images/favicon-48.png">
@@ -18,10 +18,8 @@
 <body>
 
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-    <symbol id="i-wind" viewBox="0 0 24 24"><path d="M12.8 19.6A2 2 0 1 0 14 16H2"/><path d="M17.5 8a2.5 2.5 0 1 1 2 4H2"/><path d="M9.8 4.4A2 2 0 1 1 11 8H2"/></symbol>
     <symbol id="i-bluetooth" viewBox="0 0 24 24"><path d="m7 7 10 10-5 5V2l5 5L7 17"/></symbol>
-    <symbol id="i-cpu" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M15 2v2M15 20v2M2 15h2M2 9h2M20 15h2M20 9h2M9 2v2M9 20v2"/></symbol>
-    <symbol id="i-phone" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
     <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></symbol>
   </svg>
 
@@ -33,6 +31,7 @@
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="solution.html" aria-current="page">Solution</a>
+      <a href="validation.html">Validation</a>
       <a href="impact.html">Impact</a>
       <a href="recognition.html">Recognition</a>
     </nav>
@@ -40,107 +39,92 @@
 
   <main>
 
-    <section class="page-hero grid-bg">
+    <section class="page-hero page-hero--compact grid-bg">
       <p class="kicker">The Solution</p>
       <h1>A lung check as simple as <span class="grad-text">breathing.</span></h1>
-      <p>
-        Pulma pairs a handheld breath-analysis device with a mobile app, turning a 10&#8209;second breath sample
-        into a clear lung cancer risk result.
-      </p>
+      <p>A handheld breath-analysis device and a mobile app, working as one.</p>
     </section>
 
-    <section class="section">
-      <div class="split">
-        <div class="split-copy reveal">
-          <h2>The Device</h2>
-          <p>
-            The Pulma device is a <strong>compact, handheld unit</strong> designed for a quick breath test anywhere
-            &mdash; in a clinic, in the community or at home.
-          </p>
-          <ul class="features">
-            <li>
-              <span class="feature-icon"><svg class="icon"><use href="#i-wind"/></svg></span>
-              <div><strong>Breath inlet</strong><span>Breathe straight into the top of the device for 10 seconds.</span></div>
-            </li>
-            <li>
-              <span class="feature-icon"><svg class="icon"><use href="#i-cpu"/></svg></span>
-              <div><strong>Breath sensors</strong><span>Read the pattern of volatile organic compounds (VOCs) in the sample, calibrated for humidity and temperature.</span></div>
-            </li>
-            <li>
-              <span class="feature-icon"><svg class="icon"><use href="#i-phone"/></svg></span>
-              <div><strong>On-device display</strong><span>A built-in screen on the front of the device.</span></div>
-            </li>
-            <li>
-              <span class="feature-icon"><svg class="icon"><use href="#i-bluetooth"/></svg></span>
-              <div><strong>Bluetooth</strong><span>Sends every reading to the Pulma app for analysis and storage.</span></div>
-            </li>
-          </ul>
-        </div>
-        <figure class="photo photo--render reveal" style="aspect-ratio: 4 / 3">
-          <img src="images/hero.jpg" alt="The Pulma breath-analysis device" width="2200" height="1238">
-        </figure>
+    <section class="section section--tint" id="inside">
+      <div class="section-head reveal">
+        <h2>Inside Pulma</h2>
+        <p>Six parts, from the mouthpiece at the front to the vents at the back.</p>
       </div>
-      <div class="thumbs reveal">
-        <figure class="photo photo--render"><img src="images/device-front.jpg" alt="Pulma device, front view" width="1100" height="825" loading="lazy"></figure>
-        <figure class="photo photo--render"><img src="images/device-angle-2.jpg" alt="Pulma device, angled view" width="1100" height="825" loading="lazy"></figure>
-        <figure class="photo photo--render"><img src="images/device-angle-3.jpg" alt="Pulma device, side angle" width="1100" height="825" loading="lazy"></figure>
-        <figure class="photo photo--render"><img src="images/device-back.jpg" alt="Pulma device, back view with air vents" width="1100" height="825" loading="lazy"></figure>
+      <figure class="exploded reveal">
+        <svg class="exploded-svg" viewBox="0 70 1280 670" role="img" aria-labelledby="xtitle" xmlns="http://www.w3.org/2000/svg"><title id="xtitle">Exploded view of the Pulma device: mouthpiece and front shell, touch display, BME688 gas sensor, controller board, USB-C charging module and rear shell with vents</title><defs><linearGradient id="xgrad" x1="0" x2="1"><stop offset="0" stop-color="#2f6bdc"/><stop offset="1" stop-color="#6340bf"/></linearGradient></defs><g class="xl" style="--tx:-150.9px;--ty:83.0px"><path d="M40 0H160A40 40 0 0 1 200 40V430A40 40 0 0 1 160 470H40A40 40 0 0 1 0 430V40A40 40 0 0 1 40 0Z" transform="matrix(0.4992 0.2652 0.0000 0.7800 786.90 92.71)" fill="#dfe3ec"/><path d="M40 0H160A40 40 0 0 1 200 40V430A40 40 0 0 1 160 470H40A40 40 0 0 1 0 430V40A40 40 0 0 1 40 0Z" transform="matrix(0.4992 0.2652 0.0000 0.7800 785.65 93.39)" fill="#dfe3ec"/><path d="M40 0H160A40 40 0 0 1 200 40V430A40 40 0 0 1 160 470H40A40 40 0 0 1 0 430V40A40 40 0 0 1 40 0Z" transform="matrix(0.4992 0.2652 0.0000 0.7800 784.40 94.08)" fill="#dfe3ec"/><path d="M40 0H160A40 40 0 0 1 200 40V430A40 40 0 0 1 160 470H40A40 40 0 0 1 0 430V40A40 40 0 0 1 40 0Z" transform="matrix(0.4992 0.2652 0.0000 0.7800 783.15 94.77)" fill="#dfe3ec"/><path d="M40 0H160A40 40 0 0 1 200 40V430A40 40 0 0 1 160 470H40A40 40 0 0 1 0 430V40A40 40 0 0 1 40 0Z" transform="matrix(0.4992 0.2652 0.0000 0.7800 781.90 95.45)" fill="#dfe3ec"/><path d="M40 0H160A40 40 0 0 1 200 40V430A40 40 0 0 1 160 470H40A40 40 0 0 1 0 430V40A40 40 0 0 1 40 0Z" transform="matrix(0.4992 0.2652 0.0000 0.7800 780.66 96.14)" fill="#dfe3ec"/><path d="M40 0H160A40 40 0 0 1 200 40V430A40 40 0 0 1 160 470H40A40 40 0 0 1 0 430V40A40 40 0 0 1 40 0Z" transform="matrix(0.4992 0.2652 0.0000 0.7800 779.41 96.83)" fill="#dfe3ec"/><g transform="matrix(0.4992 0.2652 0.0000 0.7800 778.16 97.51)"><path d="M40 0H160A40 40 0 0 1 200 40V430A40 40 0 0 1 160 470H40A40 40 0 0 1 0 430V40A40 40 0 0 1 40 0Z" fill="#ffffff" stroke="#c9cfdd" stroke-width="1.5"/><rect x="58" y="46" width="8" height="44" rx="4" fill="#cfd5e2"/><rect x="73" y="46" width="8" height="44" rx="4" fill="#cfd5e2"/><rect x="88" y="46" width="8" height="44" rx="4" fill="#cfd5e2"/><rect x="103" y="46" width="8" height="44" rx="4" fill="#cfd5e2"/><rect x="118" y="46" width="8" height="44" rx="4" fill="#cfd5e2"/><rect x="133" y="46" width="8" height="44" rx="4" fill="#cfd5e2"/></g></g><g class="xl" style="--tx:-90.6px;--ty:49.8px"><g transform="matrix(0.4992 0.2652 0.0000 0.7800 704.53 138.01)"><path d="M40 0H160A40 40 0 0 1 200 40V430A40 40 0 0 1 160 470H40A40 40 0 0 1 0 430V40A40 40 0 0 1 40 0Z" fill="rgba(47,107,220,0.035)" stroke="#9fb2dc" stroke-width="1.4" stroke-dasharray="6 6"/></g><rect x="68" y="368" width="64" height="80" rx="4" transform="matrix(0.4992 0.2652 0.0000 0.7800 707.65 136.29)" fill="#163c77"/><rect x="68" y="368" width="64" height="80" rx="4" transform="matrix(0.4992 0.2652 0.0000 0.7800 707.02 136.64)" fill="#163c77"/><rect x="68" y="368" width="64" height="80" rx="4" transform="matrix(0.4992 0.2652 0.0000 0.7800 706.40 136.98)" fill="#163c77"/><rect x="68" y="368" width="64" height="80" rx="4" transform="matrix(0.4992 0.2652 0.0000 0.7800 705.78 137.32)" fill="#163c77"/><rect x="68" y="368" width="64" height="80" rx="4" transform="matrix(0.4992 0.2652 0.0000 0.7800 705.15 137.67)" fill="#163c77"/><g transform="matrix(0.4992 0.2652 0.0000 0.7800 704.53 138.01)"><rect x="68" y="368" width="64" height="80" rx="4" fill="#1d4f9c"/><rect x="86" y="380" width="28" height="22" rx="2" fill="#16243f"/><rect x="88" y="430" width="24" height="16" rx="5" fill="#c6ccd8" stroke="#8d96a8" stroke-width="1.2"/><circle cx="80" cy="414" r="2.5" fill="#ff5a5a"/><circle cx="120" cy="414" r="2.5" fill="#4ad36a"/></g></g><g class="xl" style="--tx:-30.2px;--ty:16.6px"><g transform="matrix(0.4992 0.2652 0.0000 0.7800 630.90 178.51)"><path d="M40 0H160A40 40 0 0 1 200 40V430A40 40 0 0 1 160 470H40A40 40 0 0 1 0 430V40A40 40 0 0 1 40 0Z" fill="rgba(47,107,220,0.035)" stroke="#9fb2dc" stroke-width="1.4" stroke-dasharray="6 6"/></g><rect x="36" y="170" width="128" height="160" rx="4" transform="matrix(0.4992 0.2652 0.0000 0.7800 634.02 176.79)" fill="#7e1a1e"/><rect x="36" y="170" width="128" height="160" rx="4" transform="matrix(0.4992 0.2652 0.0000 0.7800 633.39 177.13)" fill="#7e1a1e"/><rect x="36" y="170" width="128" height="160" rx="4" transform="matrix(0.4992 0.2652 0.0000 0.7800 632.77 177.48)" fill="#7e1a1e"/><rect x="36" y="170" width="128" height="160" rx="4" transform="matrix(0.4992 0.2652 0.0000 0.7800 632.14 177.82)" fill="#7e1a1e"/><rect x="36" y="170" width="128" height="160" rx="4" transform="matrix(0.4992 0.2652 0.0000 0.7800 631.52 178.16)" fill="#7e1a1e"/><g transform="matrix(0.4992 0.2652 0.0000 0.7800 630.90 178.51)"><rect x="36" y="170" width="128" height="160" rx="4" fill="#b0262b"/><rect x="44" y="190" width="40" height="40" rx="3" fill="#1d1d24"/><rect x="96" y="196" width="58" height="30" rx="3" fill="#2a2a33"/><rect x="54" y="248" width="92" height="16" rx="3" fill="#7d1a1d"/><circle cx="48.0" cy="318" r="2.6" fill="#e3c46a"/><circle cx="57.5" cy="318" r="2.6" fill="#e3c46a"/><circle cx="67.0" cy="318" r="2.6" fill="#e3c46a"/><circle cx="76.5" cy="318" r="2.6" fill="#e3c46a"/><circle cx="86.0" cy="318" r="2.6" fill="#e3c46a"/><circle cx="95.5" cy="318" r="2.6" fill="#e3c46a"/><circle cx="105.0" cy="318" r="2.6" fill="#e3c46a"/><circle cx="114.5" cy="318" r="2.6" fill="#e3c46a"/><circle cx="124.0" cy="318" r="2.6" fill="#e3c46a"/><circle cx="133.5" cy="318" r="2.6" fill="#e3c46a"/><circle cx="143.0" cy="318" r="2.6" fill="#e3c46a"/><circle cx="152.5" cy="318" r="2.6" fill="#e3c46a"/></g></g><g class="xl" style="--tx:30.2px;--ty:-16.6px"><g transform="matrix(0.4992 0.2652 0.0000 0.7800 557.26 219.00)"><path d="M40 0H160A40 40 0 0 1 200 40V430A40 40 0 0 1 160 470H40A40 40 0 0 1 0 430V40A40 40 0 0 1 40 0Z" fill="rgba(47,107,220,0.035)" stroke="#9fb2dc" stroke-width="1.4" stroke-dasharray="6 6"/><path d="M28 40H172A30 30 0 0 1 172 124H28A30 30 0 0 1 28 40Z" fill="rgba(47,107,220,0.08)" stroke="#7f9ad6" stroke-width="1.4" stroke-dasharray="4 4"/></g><g transform="matrix(0.4992 0.2652 0.0000 0.7800 557.26 219.00)"><rect x="72" y="62" width="56" height="40" rx="5" fill="#1c1f2b"/><rect x="92" y="74" width="16" height="16" rx="2" fill="#c9ced8"/><circle cx="80" cy="70" r="3" fill="#c9a24a"/><circle cx="120" cy="70" r="3" fill="#c9a24a"/><rect x="78" y="96" width="4" height="4" fill="#c9a24a"/><rect x="86" y="96" width="4" height="4" fill="#c9a24a"/><rect x="94" y="96" width="4" height="4" fill="#c9a24a"/><rect x="102" y="96" width="4" height="4" fill="#c9a24a"/><rect x="110" y="96" width="4" height="4" fill="#c9a24a"/><rect x="118" y="96" width="4" height="4" fill="#c9a24a"/></g></g><g class="xl" style="--tx:90.6px;--ty:-49.8px"><g transform="matrix(0.4992 0.2652 0.0000 0.7800 483.63 259.50)"><path d="M40 0H160A40 40 0 0 1 200 40V430A40 40 0 0 1 160 470H40A40 40 0 0 1 0 430V40A40 40 0 0 1 40 0Z" fill="rgba(47,107,220,0.035)" stroke="#9fb2dc" stroke-width="1.4" stroke-dasharray="6 6"/></g><rect x="26" y="150" width="148" height="214" rx="4" transform="matrix(0.4992 0.2652 0.0000 0.7800 486.13 258.13)" fill="#0e1222"/><rect x="26" y="150" width="148" height="214" rx="4" transform="matrix(0.4992 0.2652 0.0000 0.7800 485.50 258.47)" fill="#0e1222"/><rect x="26" y="150" width="148" height="214" rx="4" transform="matrix(0.4992 0.2652 0.0000 0.7800 484.88 258.82)" fill="#0e1222"/><rect x="26" y="150" width="148" height="214" rx="4" transform="matrix(0.4992 0.2652 0.0000 0.7800 484.26 259.16)" fill="#0e1222"/><g transform="matrix(0.4992 0.2652 0.0000 0.7800 483.63 259.50)"><rect x="26" y="150" width="148" height="214" rx="4" fill="#1b2033"/><rect x="26" y="150" width="148" height="214" rx="8" fill="#1b2033"/><rect x="34" y="158" width="132" height="198" rx="4" fill="#232a44"/><path d="M64 270a36 36 0 0 1 72 0" fill="none" stroke="#3a4363" stroke-width="9" stroke-linecap="round"/><path d="M64 270a36 36 0 0 1 52 -32" fill="none" stroke="url(#xgrad)" stroke-width="9" stroke-linecap="round"/><text x="100" y="272" text-anchor="middle" font-family="Poppins, sans-serif" font-weight="700" font-size="20" fill="#fff">87</text><rect x="62" y="296" width="76" height="8" rx="4" fill="#3a4363"/><rect x="74" y="312" width="52" height="6" rx="3" fill="#3a4363"/></g></g><g class="xl" style="--tx:150.9px;--ty:-83.0px"><path d="M40 0H160A40 40 0 0 1 200 40V430A40 40 0 0 1 160 470H40A40 40 0 0 1 0 430V40A40 40 0 0 1 40 0Z" transform="matrix(0.4992 0.2652 0.0000 0.7800 418.74 295.20)" fill="#dfe3ec"/><path d="M40 0H160A40 40 0 0 1 200 40V430A40 40 0 0 1 160 470H40A40 40 0 0 1 0 430V40A40 40 0 0 1 40 0Z" transform="matrix(0.4992 0.2652 0.0000 0.7800 417.49 295.88)" fill="#dfe3ec"/><path d="M40 0H160A40 40 0 0 1 200 40V430A40 40 0 0 1 160 470H40A40 40 0 0 1 0 430V40A40 40 0 0 1 40 0Z" transform="matrix(0.4992 0.2652 0.0000 0.7800 416.24 296.57)" fill="#dfe3ec"/><path d="M40 0H160A40 40 0 0 1 200 40V430A40 40 0 0 1 160 470H40A40 40 0 0 1 0 430V40A40 40 0 0 1 40 0Z" transform="matrix(0.4992 0.2652 0.0000 0.7800 414.99 297.25)" fill="#dfe3ec"/><path d="M40 0H160A40 40 0 0 1 200 40V430A40 40 0 0 1 160 470H40A40 40 0 0 1 0 430V40A40 40 0 0 1 40 0Z" transform="matrix(0.4992 0.2652 0.0000 0.7800 413.74 297.94)" fill="#dfe3ec"/><path d="M40 0H160A40 40 0 0 1 200 40V430A40 40 0 0 1 160 470H40A40 40 0 0 1 0 430V40A40 40 0 0 1 40 0Z" transform="matrix(0.4992 0.2652 0.0000 0.7800 412.50 298.63)" fill="#dfe3ec"/><path d="M40 0H160A40 40 0 0 1 200 40V430A40 40 0 0 1 160 470H40A40 40 0 0 1 0 430V40A40 40 0 0 1 40 0Z" transform="matrix(0.4992 0.2652 0.0000 0.7800 411.25 299.31)" fill="#dfe3ec"/><g transform="matrix(0.4992 0.2652 0.0000 0.7800 410.00 300.00)"><path d="M40 0H160A40 40 0 0 1 200 40V430A40 40 0 0 1 160 470H40A40 40 0 0 1 0 430V40A40 40 0 0 1 40 0Z" fill="#ffffff" stroke="#c9cfdd" stroke-width="1.5"/><rect x="26" y="150" width="148" height="214" rx="10" fill="#eef1f8" stroke="#c9cfdd" stroke-width="1.5"/><text x="100" y="392" text-anchor="middle" font-family="Poppins, sans-serif" font-weight="700" font-size="20" fill="#2f6bdc">PULMA</text><circle cx="100" cy="425" r="15" fill="#f4f6fb" stroke="#c9cfdd" stroke-width="1.5"/><path d="M100 416v7M94 419a8 8 0 1 0 12 0" fill="none" stroke="#9aa3b8" stroke-width="2" stroke-linecap="round"/></g><path d="M28 52H172A30 30 0 0 1 172 112H28A30 30 0 0 1 28 52Z" transform="matrix(0.4992 0.2652 0.0000 0.7800 410.00 300.00)" fill="#e3e7f0"/><path d="M28 52H172A30 30 0 0 1 172 112H28A30 30 0 0 1 28 52Z" transform="matrix(0.4992 0.2652 0.0000 0.7800 408.13 301.03)" fill="#e3e7f0"/><path d="M28 52H172A30 30 0 0 1 172 112H28A30 30 0 0 1 28 52Z" transform="matrix(0.4992 0.2652 0.0000 0.7800 406.26 302.06)" fill="#e3e7f0"/><path d="M28 52H172A30 30 0 0 1 172 112H28A30 30 0 0 1 28 52Z" transform="matrix(0.4992 0.2652 0.0000 0.7800 404.38 303.09)" fill="#e3e7f0"/><path d="M28 52H172A30 30 0 0 1 172 112H28A30 30 0 0 1 28 52Z" transform="matrix(0.4992 0.2652 0.0000 0.7800 402.51 304.12)" fill="#e3e7f0"/><path d="M28 52H172A30 30 0 0 1 172 112H28A30 30 0 0 1 28 52Z" transform="matrix(0.4992 0.2652 0.0000 0.7800 400.64 305.15)" fill="#e3e7f0"/><path d="M28 52H172A30 30 0 0 1 172 112H28A30 30 0 0 1 28 52Z" transform="matrix(0.4992 0.2652 0.0000 0.7800 398.77 306.18)" fill="#e3e7f0"/><path d="M28 52H172A30 30 0 0 1 172 112H28A30 30 0 0 1 28 52Z" transform="matrix(0.4992 0.2652 0.0000 0.7800 396.90 307.21)" fill="#e3e7f0"/><path d="M28 52H172A30 30 0 0 1 172 112H28A30 30 0 0 1 28 52Z" transform="matrix(0.4992 0.2652 0.0000 0.7800 395.02 308.24)" fill="#e3e7f0"/><path d="M28 52H172A30 30 0 0 1 172 112H28A30 30 0 0 1 28 52Z" transform="matrix(0.4992 0.2652 0.0000 0.7800 393.15 309.27)" fill="#e3e7f0"/><path d="M28 52H172A30 30 0 0 1 172 112H28A30 30 0 0 1 28 52Z" transform="matrix(0.4992 0.2652 0.0000 0.7800 391.28 310.30)" fill="#e3e7f0"/><path d="M28 52H172A30 30 0 0 1 172 112H28A30 30 0 0 1 28 52Z" transform="matrix(0.4992 0.2652 0.0000 0.7800 389.41 311.33)" fill="#e3e7f0"/><path d="M28 52H172A30 30 0 0 1 172 112H28A30 30 0 0 1 28 52Z" transform="matrix(0.4992 0.2652 0.0000 0.7800 387.54 312.36)" fill="#e3e7f0"/><path d="M28 52H172A30 30 0 0 1 172 112H28A30 30 0 0 1 28 52Z" transform="matrix(0.4992 0.2652 0.0000 0.7800 385.66 313.38)" fill="#e3e7f0"/><g transform="matrix(0.4992 0.2652 0.0000 0.7800 385.04 313.73)"><path d="M28 52H172A30 30 0 0 1 172 112H28A30 30 0 0 1 28 52Z" fill="#fff" stroke="#c9cfdd" stroke-width="1.5"/><path d="M34 60H166A22 22 0 0 1 166 104H34A22 22 0 0 1 34 60Z" fill="#f1f3f8"/><circle cx="100" cy="82" r="13" fill="#d7dbe4" stroke="#b5bccb" stroke-width="2"/><circle cx="100" cy="82" r="7" fill="#2b2f3a"/></g></g><g class="xlabel" style="--d:0"><path d="M435.0 404.2L350.0 398.2" fill="none" stroke="#2f6bdc" stroke-width="1.4"/><circle cx="435.0" cy="404.2" r="5" fill="#fff" stroke="#2f6bdc" stroke-width="2.4"/><circle cx="350.0" cy="398.2" r="14" fill="url(#xgrad)"/><text x="350.0" y="403.2" text-anchor="middle" font-family="Poppins, sans-serif" font-weight="600" font-size="14" fill="#fff">1</text><text class="xt" x="326" y="395.2" text-anchor="end" font-family="Poppins, sans-serif" font-weight="600" font-size="19" fill="#10183a">Mouthpiece</text><text class="xs" x="326" y="417.2" text-anchor="end" font-family="Inter, sans-serif" font-size="14" fill="#6c7389">Breathe in through the front of the head</text></g><g class="xlabel" style="--d:1"><path d="M558.5 455.3L350.0 467.3" fill="none" stroke="#2f6bdc" stroke-width="1.4"/><circle cx="558.5" cy="455.3" r="5" fill="#fff" stroke="#2f6bdc" stroke-width="2.4"/><circle cx="350.0" cy="467.3" r="14" fill="url(#xgrad)"/><text x="350.0" y="472.3" text-anchor="middle" font-family="Poppins, sans-serif" font-weight="600" font-size="14" fill="#fff">2</text><text class="xt" x="326" y="464.3" text-anchor="end" font-family="Poppins, sans-serif" font-weight="600" font-size="19" fill="#10183a">Touch display</text><text class="xs" x="326" y="486.3" text-anchor="end" font-family="Inter, sans-serif" font-size="14" fill="#6c7389">Shows the status and the score on the device</text></g><g class="xlabel" style="--d:2"><path d="M607.2 309.5L350.0 309.5" fill="none" stroke="#2f6bdc" stroke-width="1.4"/><circle cx="607.2" cy="309.5" r="5" fill="#fff" stroke="#2f6bdc" stroke-width="2.4"/><circle cx="350.0" cy="309.5" r="14" fill="url(#xgrad)"/><text x="350.0" y="314.5" text-anchor="middle" font-family="Poppins, sans-serif" font-weight="600" font-size="14" fill="#fff">3</text><text class="xt" x="326" y="306.5" text-anchor="end" font-family="Poppins, sans-serif" font-weight="600" font-size="19" fill="#10183a">BME688 gas sensor</text><text class="xs" x="326" y="328.5" text-anchor="end" font-family="Inter, sans-serif" font-size="14" fill="#6c7389">Reads VOCs, humidity, temperature and pressure</text></g><g class="xlabel" style="--d:3"><path d="M680.8 400.0L920.0 400.0" fill="none" stroke="#2f6bdc" stroke-width="1.4"/><circle cx="680.8" cy="400.0" r="5" fill="#fff" stroke="#2f6bdc" stroke-width="2.4"/><circle cx="920.0" cy="400.0" r="14" fill="url(#xgrad)"/><text x="920.0" y="405.0" text-anchor="middle" font-family="Poppins, sans-serif" font-weight="600" font-size="14" fill="#fff">4</text><text class="xt" x="944" y="397.0" text-anchor="start" font-family="Poppins, sans-serif" font-weight="600" font-size="19" fill="#10183a">Controller board</text><text class="xs" x="944" y="419.0" text-anchor="start" font-family="Inter, sans-serif" font-size="14" fill="#6c7389">Runs the scan and talks to the app over Bluetooth</text></g><g class="xlabel" style="--d:4"><path d="M754.4 484.3L920.0 484.3" fill="none" stroke="#2f6bdc" stroke-width="1.4"/><circle cx="754.4" cy="484.3" r="5" fill="#fff" stroke="#2f6bdc" stroke-width="2.4"/><circle cx="920.0" cy="484.3" r="14" fill="url(#xgrad)"/><text x="920.0" y="489.3" text-anchor="middle" font-family="Poppins, sans-serif" font-weight="600" font-size="14" fill="#fff">5</text><text class="xt" x="944" y="481.3" text-anchor="start" font-family="Poppins, sans-serif" font-weight="600" font-size="19" fill="#10183a">USB-C charging</text><text class="xs" x="944" y="503.3" text-anchor="start" font-family="Inter, sans-serif" font-size="14" fill="#6c7389">Charges the device over USB-C</text></g><g class="xlabel" style="--d:5"><path d="M828.1 177.1L920.0 177.1" fill="none" stroke="#2f6bdc" stroke-width="1.4"/><circle cx="828.1" cy="177.1" r="5" fill="#fff" stroke="#2f6bdc" stroke-width="2.4"/><circle cx="920.0" cy="177.1" r="14" fill="url(#xgrad)"/><text x="920.0" y="182.1" text-anchor="middle" font-family="Poppins, sans-serif" font-weight="600" font-size="14" fill="#fff">6</text><text class="xt" x="944" y="174.1" text-anchor="start" font-family="Poppins, sans-serif" font-weight="600" font-size="19" fill="#10183a">Rear vents</text><text class="xs" x="944" y="196.1" text-anchor="start" font-family="Inter, sans-serif" font-size="14" fill="#6c7389">Breath leaves through the back of the head</text></g><g class="xpin"><circle cx="435.0" cy="404.2" r="15" fill="url(#xgrad)" stroke="#fff" stroke-width="3"/><text x="435.0" y="409.7" text-anchor="middle" font-family="Poppins, sans-serif" font-weight="600" font-size="15" fill="#fff">1</text></g><g class="xpin"><circle cx="558.5" cy="455.3" r="15" fill="url(#xgrad)" stroke="#fff" stroke-width="3"/><text x="558.5" y="460.8" text-anchor="middle" font-family="Poppins, sans-serif" font-weight="600" font-size="15" fill="#fff">2</text></g><g class="xpin"><circle cx="607.2" cy="309.5" r="15" fill="url(#xgrad)" stroke="#fff" stroke-width="3"/><text x="607.2" y="315.0" text-anchor="middle" font-family="Poppins, sans-serif" font-weight="600" font-size="15" fill="#fff">3</text></g><g class="xpin"><circle cx="680.8" cy="400.0" r="15" fill="url(#xgrad)" stroke="#fff" stroke-width="3"/><text x="680.8" y="405.5" text-anchor="middle" font-family="Poppins, sans-serif" font-weight="600" font-size="15" fill="#fff">4</text></g><g class="xpin"><circle cx="754.4" cy="484.3" r="15" fill="url(#xgrad)" stroke="#fff" stroke-width="3"/><text x="754.4" y="489.8" text-anchor="middle" font-family="Poppins, sans-serif" font-weight="600" font-size="15" fill="#fff">5</text></g><g class="xpin"><circle cx="828.1" cy="177.1" r="15" fill="url(#xgrad)" stroke="#fff" stroke-width="3"/><text x="828.1" y="182.6" text-anchor="middle" font-family="Poppins, sans-serif" font-weight="600" font-size="15" fill="#fff">6</text></g></svg>
+      </figure>
+      <ol class="parts-legend">
+        <li><strong>Mouthpiece</strong>Breathe in through the front of the head</li>
+        <li><strong>Touch display</strong>Shows the status and the score on the device</li>
+        <li><strong>BME688 gas sensor</strong>Reads VOCs, humidity, temperature and pressure</li>
+        <li><strong>Controller board</strong>Runs the scan and talks to the app over Bluetooth</li>
+        <li><strong>USB-C charging</strong>Charges the device over USB-C</li>
+        <li><strong>Rear vents</strong>Breath leaves through the back of the head</li>
+      </ol>
+    </section>
+
+    <section class="section" id="how">
+      <div class="section-head reveal">
+        <h2>Follow One Breath</h2>
+        <p>From the mouthpiece to the app, one scan in five steps.</p>
+      </div>
+      <div class="journey reveal">
+        <figure class="j-step j-step--phone">
+          <div class="j-visual"><img src="images/app-login.png" alt="Pulma app sign-in screen" width="520" height="1075" loading="lazy"></div>
+          <figcaption class="j-cap"><span class="j-num">1</span><strong>Sign in</strong>Open the app and connect the device.</figcaption>
+        </figure>
+        <div class="j-link" aria-hidden="true"><svg class="icon"><use href="#i-arrow"/></svg></div>
+        <figure class="j-step j-step--section">
+          <div class="j-visual">
+            <div class="airflow">
+              <img src="images/tech-section.jpg" alt="Cross-section of the Pulma head showing the mouthpiece tube, breath chamber and sensor" width="750" height="518" loading="lazy">
+              <svg viewBox="0 0 750 518" aria-hidden="true">
+                <path class="flow" d="M92 216H462"/>
+                <path class="flow" d="M592 157H704"/>
+                <path class="flow-head" d="M456 204l14 12-14 12M698 145l14 12-14 12"/>
+                <g class="flow-pin"><circle cx="126" cy="216" r="18"/><text x="126" y="222">2</text></g>
+                <g class="flow-pin"><circle cx="548" cy="228" r="18"/><text x="548" y="234">3</text></g>
+              </svg>
+            </div>
+          </div>
+          <div class="j-caps">
+            <p class="j-cap"><span class="j-num">2</span><strong>Breathe</strong>Breath travels down the mouthpiece tube into the chamber.</p>
+            <p class="j-cap"><span class="j-num">3</span><strong>Sense</strong>The BME688 reads the breath, then air leaves through the rear vents.</p>
+          </div>
+        </figure>
+        <div class="j-link j-link--bt" aria-hidden="true"><svg class="icon"><use href="#i-bluetooth"/></svg></div>
+        <figure class="j-step j-step--phone">
+          <div class="j-visual"><img src="images/app-result.png" alt="Pulma app result screen with a risk gauge" width="520" height="1075" loading="lazy"></div>
+          <figcaption class="j-cap"><span class="j-num">4</span><strong>See the result</strong>A risk score and level, in the app and on the device.</figcaption>
+        </figure>
+        <div class="j-link" aria-hidden="true"><svg class="icon"><use href="#i-arrow"/></svg></div>
+        <figure class="j-step j-step--phone">
+          <div class="j-visual"><img src="images/app-home.png" alt="Pulma app home screen with scan history" width="520" height="1075" loading="lazy"></div>
+          <figcaption class="j-cap"><span class="j-num">5</span><strong>Track it</strong>Every scan is saved, so changes are easy to see.</figcaption>
+        </figure>
       </div>
     </section>
 
     <section class="section section--tint">
       <div class="section-head reveal">
-        <h2>How It Works</h2>
-        <p>From breath to result in four steps.</p>
+        <h2>Designed in CAD, Built for Real</h2>
       </div>
-      <div class="cards reveal">
-        <div class="card">
-          <span class="step-num">1</span>
-          <h3>Connect</h3>
-          <p>Pair the Pulma device with the app over Bluetooth.</p>
-        </div>
-        <div class="card">
-          <span class="step-num">2</span>
-          <h3>Breathe</h3>
-          <p>Breathe into the device for 10 seconds, in a well-ventilated area.</p>
-        </div>
-        <div class="card">
-          <span class="step-num">3</span>
-          <h3>Analyze</h3>
-          <p>Sensors read the VOC pattern of the breath sample, calibrated for humidity and temperature.</p>
-        </div>
-        <div class="card">
-          <span class="step-num">4</span>
-          <h3>Review</h3>
-          <p>The app shows the risk level, the main finding and a recommended next step.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="section-head reveal">
-        <h2>The Pulma App</h2>
-        <p>
-          The app guides each scan and turns the sensor reading into a result anyone can understand. Every scan is
-          saved, so users can follow their <strong>history and trends</strong> over time.
-        </p>
-      </div>
-      <div class="screens reveal">
+      <div class="gallery build reveal">
         <figure>
-          <img src="images/app-home.png" alt="Pulma app home screen" width="520" height="1075" loading="lazy">
-          <figcaption><strong>Home</strong>Device status, one-tap breath scan, last result, scan history and tips.</figcaption>
+          <button class="photo" type="button"><img src="images/tech-internals.jpg" alt="CAD view of the internal layout: display, controller and USB-C charging board" width="750" height="659" loading="lazy"></button>
+          <figcaption>Internal layout</figcaption>
         </figure>
         <figure>
-          <img src="images/app-result.png" alt="Pulma scan results screen with a risk gauge" width="520" height="1075" loading="lazy">
-          <figcaption><strong>Scan Results</strong>A risk gauge, the main result and the supporting findings.</figcaption>
+          <button class="photo" type="button"><img src="images/tech-sensor.jpg" alt="CAD view of the BME688 sensor mounted in the breath head" width="750" height="526" loading="lazy"></button>
+          <figcaption>Sensor in the breath head</figcaption>
         </figure>
         <figure>
-          <img src="images/app-login.png" alt="Pulma app log in screen" width="520" height="1075" loading="lazy">
-          <figcaption><strong>Log In</strong>Secure sign-in, including Google and Facebook.</figcaption>
+          <button class="photo photo--render" type="button"><img src="images/device-angle-3.jpg" alt="Rendered Pulma device" width="1100" height="825" loading="lazy"></button>
+          <figcaption>Final render</figcaption>
         </figure>
         <figure>
-          <img src="images/app-signup.png" alt="Pulma app sign up screen" width="520" height="1075" loading="lazy">
-          <figcaption><strong>Sign Up</strong>A personal profile keeps every scan in one place.</figcaption>
+          <button class="photo" type="button"><img src="images/trial-3.jpg" alt="The working Pulma prototype" width="900" height="1200" loading="lazy"></button>
+          <figcaption>Working prototype</figcaption>
         </figure>
       </div>
       <div class="note reveal">
@@ -160,12 +144,21 @@
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="solution.html">Solution</a>
+      <a href="validation.html">Validation</a>
       <a href="impact.html">Impact</a>
       <a href="recognition.html">Recognition</a>
     </nav>
     <p>Patent Number: 2603006842</p>
     <p class="fineprint">&copy; 2026 Pulma. For pre-screening and wellness tracking only; not a medical diagnosis.</p>
   </footer>
+
+  <dialog class="lightbox" aria-label="Photo viewer">
+    <form method="dialog"><button class="lightbox-close" aria-label="Close">&times;</button></form>
+    <button class="lightbox-prev" type="button" aria-label="Previous photo">&lsaquo;</button>
+    <button class="lightbox-next" type="button" aria-label="Next photo">&rsaquo;</button>
+    <img alt="">
+    <p class="lightbox-caption"></p>
+  </dialog>
 
   <script src="script.js"></script>
 </body>

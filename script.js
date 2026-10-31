@@ -20,14 +20,26 @@ const lightbox = document.querySelector('.lightbox');
 if (lightbox) {
   const lightboxImg = lightbox.querySelector('img');
   const lightboxCaption = lightbox.querySelector('.lightbox-caption');
-  document.querySelectorAll('.gallery .photo').forEach((button) => {
+  const photos = [...document.querySelectorAll('.gallery .photo')];
+  let current = 0;
+  const show = (i) => {
+    current = (i + photos.length) % photos.length;
+    const img = photos[current].querySelector('img');
+    lightboxImg.src = img.currentSrc || img.src;
+    lightboxImg.alt = img.alt;
+    lightboxCaption.textContent = img.alt;
+  };
+  photos.forEach((button, i) => {
     button.addEventListener('click', () => {
-      const img = button.querySelector('img');
-      lightboxImg.src = img.currentSrc || img.src;
-      lightboxImg.alt = img.alt;
-      lightboxCaption.textContent = img.alt;
+      show(i);
       lightbox.showModal();
     });
+  });
+  lightbox.querySelector('.lightbox-prev')?.addEventListener('click', () => show(current - 1));
+  lightbox.querySelector('.lightbox-next')?.addEventListener('click', () => show(current + 1));
+  lightbox.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') show(current - 1);
+    if (e.key === 'ArrowRight') show(current + 1);
   });
   lightbox.addEventListener('click', (e) => {
     if (e.target === lightbox) lightbox.close();

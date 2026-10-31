@@ -466,6 +466,10 @@ svg.icon {
 
 .thumbs .photo { aspect-ratio: 4 / 3; border-radius: 14px; }
 
+.thumbs--3 { grid-template-columns: repeat(3, 1fr); margin-top: 0; }
+
+.thumbs--3 .photo { background: #fff; }
+
 /* Patent card ------------------------------------------------------------ */
 
 .patent-card {
@@ -734,6 +738,248 @@ svg.icon {
 
 .gallery .photo:hover img { transform: scale(1.04); }
 
+/* Photo story (Validation, Impact) --------------------------------------- */
+
+.photo-hero {
+  position: relative;
+  height: clamp(440px, 74vh, 700px);
+  overflow: hidden;
+  background: var(--ink);
+}
+
+.photo-hero-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
+  height: 100%;
+}
+
+.photo-hero-strip img { width: 100%; height: 100%; object-fit: cover; }
+
+.photo-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(10, 14, 32, 0.88), rgba(10, 14, 32, 0.25) 50%, rgba(10, 14, 32, 0.05));
+  pointer-events: none;
+}
+
+.photo-hero-copy {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  max-width: var(--wrap);
+  margin: 0 auto;
+  padding: 0 16px clamp(36px, 6vw, 72px);
+}
+
+.photo-hero h1 {
+  max-width: 16ch;
+  font-size: clamp(38px, 6vw, 72px);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+
+.chapter { padding: clamp(56px, 8vw, 96px) 16px 0; }
+
+.chapter:last-of-type { padding-bottom: clamp(72px, 10vw, 120px); }
+
+.chapter-head {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  max-width: var(--wrap);
+  margin: 0 auto clamp(20px, 3vw, 28px);
+}
+
+.chapter-head::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+
+.chapter-num { font: 700 clamp(15px, 1.6vw, 17px)/1 "Poppins", sans-serif; letter-spacing: 0.06em; }
+
+.chapter-head h2 { font-size: clamp(24px, 3.2vw, 34px); font-weight: 700; line-height: 1.2; }
+
+/* Mixed-size photo grid: .t tall, .w wide, .b big */
+.mosaic {
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: clamp(130px, 19vw, 230px);
+  grid-auto-flow: dense;
+  gap: 12px;
+}
+
+.gallery.mosaic .photo { aspect-ratio: auto; }
+
+.mosaic .t { grid-row: span 2; }
+
+.mosaic .w { grid-column: span 2; }
+
+.mosaic .b { grid-column: span 2; grid-row: span 2; }
+
+.next-page { max-width: var(--wrap); margin: clamp(40px, 6vw, 64px) auto 0; text-align: right; }
+
+.photo-hero--short { height: clamp(320px, 50vh, 440px); }
+
+.photo-hero-copy p:not(.kicker) {
+  max-width: 560px;
+  margin: 14px 0 0;
+  font-size: clamp(16px, 1.8vw, 18px);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+/* Storyboard: short copy beside a grid of small photos */
+.steps { display: grid; gap: clamp(28px, 4vw, 44px); max-width: var(--wrap); margin: 0 auto; }
+
+.step {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: clamp(24px, 4vw, 48px);
+  align-items: start;
+  padding-top: clamp(28px, 4vw, 44px);
+  border-top: 1px solid var(--line);
+}
+
+.step:first-child { padding-top: 0; border-top: 0; }
+
+.step-copy h2 { margin: 10px 0 10px; font-size: clamp(22px, 2.4vw, 27px); font-weight: 700; line-height: 1.25; }
+
+.step-copy p { margin: 0; font-size: 15.5px; line-height: 1.65; text-wrap: pretty; }
+
+.step-copy strong { color: var(--ink); font-weight: 600; }
+
+.step-media { container-type: inline-size; }
+
+/* Six portrait columns; .w spans two, .b is a 3x2 lead photo */
+.gallery.step-photos {
+  grid-template-columns: repeat(6, 1fr);
+  grid-auto-rows: calc((100cqw - 50px) / 6 * 4 / 3);
+  grid-auto-flow: dense;
+  gap: 10px;
+  max-width: none;
+}
+
+.gallery.step-photos .photo { aspect-ratio: auto; border-radius: 12px; }
+
+.step-photos .w { grid-column: span 2; }
+
+.step-photos .b { grid-column: span 3; grid-row: span 2; }
+
+/* Solution: exploded view ------------------------------------------------ */
+
+.page-hero--compact { padding: clamp(48px, 6vw, 72px) 16px clamp(40px, 5vw, 60px); }
+
+.exploded { max-width: 1240px; margin: 0 auto; }
+
+.exploded-svg { display: block; width: 100%; height: auto; overflow: visible; }
+
+/* Layers start stacked together and spread apart when the figure scrolls into view */
+.js .exploded .xl { transform: translate(var(--tx), var(--ty)); transition: transform 1.2s cubic-bezier(0.2, 0.7, 0.2, 1); }
+
+.js .exploded.is-visible .xl { transform: none; }
+
+.js .exploded .xlabel { opacity: 0; transition: opacity 0.5s ease calc(0.9s + var(--d) * 0.08s); }
+
+.js .exploded .xpin { opacity: 0; transition: opacity 0.5s ease 1s; }
+
+.js .exploded.is-visible .xlabel,
+.js .exploded.is-visible .xpin { opacity: 1; }
+
+.parts-legend,
+.exploded .xpin { display: none; }
+
+/* Solution: one breath, device to app ------------------------------------ */
+
+.journey {
+  display: grid;
+  grid-template-columns: minmax(0, 150px) 36px minmax(0, 1fr) 56px minmax(0, 150px) 36px minmax(0, 150px);
+  align-items: start;
+  max-width: var(--wrap);
+  margin: 0 auto;
+}
+
+.j-step { margin: 0; }
+
+.j-visual { display: flex; align-items: center; justify-content: center; height: 400px; }
+
+.j-step--phone img { width: 100%; max-width: 150px; filter: drop-shadow(0 18px 28px rgba(16, 24, 58, 0.18)); }
+
+.airflow {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #fff;
+}
+
+.airflow img { width: 100%; }
+
+.airflow svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+
+.flow {
+  fill: none;
+  stroke: var(--blue);
+  stroke-width: 6;
+  stroke-linecap: round;
+  stroke-dasharray: 2 16;
+  animation: flow 1.2s linear infinite;
+}
+
+.flow-head { fill: none; stroke: var(--blue); stroke-width: 6; stroke-linecap: round; stroke-linejoin: round; }
+
+.flow-pin circle { fill: var(--violet); stroke: #fff; stroke-width: 4; }
+
+.flow-pin text { font: 600 20px "Poppins", sans-serif; fill: #fff; text-anchor: middle; }
+
+@keyframes flow { to { stroke-dashoffset: -36; } }
+
+.j-link {
+  display: grid;
+  place-items: center;
+  height: 400px;
+  color: #9aa6c8;
+}
+
+.j-link--bt { color: var(--blue); }
+
+.j-link--bt .icon {
+  width: 40px;
+  height: 40px;
+  padding: 9px;
+  border-radius: 50%;
+  background: var(--tint);
+  box-shadow: 0 0 0 6px rgba(47, 107, 220, 0.08);
+}
+
+.j-caps { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+.j-cap { margin: 22px 0 0; font-size: 15px; line-height: 1.55; }
+
+.j-cap strong { display: block; margin: 10px 0 4px; font: 600 17px/1.3 "Poppins", sans-serif; color: var(--ink); }
+
+.j-num {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--grad);
+  font: 600 14px/1 "Poppins", sans-serif;
+  color: #fff;
+}
+
+/* Solution: CAD to prototype --------------------------------------------- */
+
+.gallery.build { grid-template-columns: repeat(4, 1fr); }
+
+.build figure { margin: 0; }
+
+.gallery.build .photo { width: 100%; aspect-ratio: 4 / 3; background: #fff; }
+
+.build figcaption { margin-top: 10px; font: 500 15px/1.4 "Poppins", sans-serif; color: var(--ink); text-align: center; }
+
 /* Footer ----------------------------------------------------------------- */
 
 .site-footer {
@@ -772,6 +1018,26 @@ svg.icon {
 
 .lightbox-caption { margin: 0; padding: 14px 20px 16px; font-size: 15px; text-align: center; }
 
+.lightbox-prev,
+.lightbox-next {
+  position: absolute;
+  top: 50%;
+  width: 44px;
+  height: 44px;
+  margin-top: -40px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--ink);
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.lightbox-prev { left: 10px; }
+
+.lightbox-next { right: 10px; }
+
 .lightbox-close {
   position: absolute;
   top: 10px;
@@ -802,6 +1068,8 @@ svg.icon {
   .js .reveal { opacity: 1; transform: none; transition: none; }
   .hero-chip { animation: none; }
   .btn, .gallery .photo img { transition: none; }
+  .flow { animation: none; }
+  .js .exploded .xl, .js .exploded .xlabel { transform: none; opacity: 1; transition: none; }
 }
 
 /* Tablet ----------------------------------------------------------------- */
@@ -816,6 +1084,15 @@ svg.icon {
   .cards { grid-template-columns: repeat(2, 1fr); }
   .screens { grid-template-columns: repeat(2, 1fr); row-gap: 40px; max-width: 560px; }
   .gallery--4 { grid-template-columns: repeat(3, 1fr); }
+  .gallery.build { grid-template-columns: repeat(2, 1fr); }
+  .journey { grid-template-columns: 1fr; max-width: 640px; }
+  .j-step--phone { display: grid; grid-template-columns: 110px 1fr; gap: 20px; align-items: center; }
+  .j-step--phone .j-visual { height: auto; }
+  .j-step--phone .j-cap { margin: 0; }
+  .j-visual { height: auto; }
+  .j-link { height: 44px; }
+  .j-link .icon { transform: rotate(90deg); }
+  .j-link--bt .icon { transform: none; }
   .facts { grid-template-columns: repeat(2, 1fr); }
   .fact:nth-child(3) { border-left: 0; }
   .fact:nth-child(n + 3) { border-top: 1px solid var(--line); }
@@ -824,10 +1101,10 @@ svg.icon {
 /* Phone ------------------------------------------------------------------ */
 
 @media (max-width: 720px) {
-  :root { --header-h: 92px; }
+  :root { --header-h: 120px; }
   body { font-size: 16px; }
   .brand img { width: 140px; }
-  .nav { gap: 16px; }
+  .nav { flex-wrap: wrap; justify-content: center; gap: 0 16px; }
   .nav a { font-size: 13.5px; }
   .hero-chip { font-size: 12.5px; padding: 7px 12px 7px 7px; }
   .hero-chip .chip-icon { width: 28px; height: 28px; }
@@ -838,6 +1115,7 @@ svg.icon {
   .hero h1 { font-size: clamp(34px, 9.6vw, 44px); }
   .photo-pair { gap: 14px; }
   .thumbs { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .thumbs--3 { grid-template-columns: repeat(3, 1fr); gap: 8px; }
   .cards--2,
   .cards--3 { grid-template-columns: 1fr; gap: 14px; }
   .member { padding: 40px 24px 36px; }
@@ -846,6 +1124,60 @@ svg.icon {
   .screens { gap: 16px; row-gap: 32px; }
   .gallery,
   .gallery--4 { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .mosaic { grid-auto-rows: clamp(120px, 34vw, 200px); }
+  .step { grid-template-columns: 1fr; gap: 16px; }
+  /* Phones: each step's photos become a swipeable strip */
+  .gallery.step-photos {
+    display: flex;
+    gap: 8px;
+    margin: 0 -16px;
+    padding: 0 16px 4px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding: 0 16px;
+    scrollbar-width: none;
+  }
+  .gallery.step-photos::-webkit-scrollbar { display: none; }
+  .gallery.step-photos .photo { flex: none; height: 220px; aspect-ratio: 3 / 4; scroll-snap-align: start; }
+  .gallery.step-photos .w { aspect-ratio: 4 / 3; }
+  /* Exploded view: zoom in on the device, move the labels into a list below */
+  .exploded { overflow: hidden; }
+  .exploded-svg { width: 230%; margin-left: -62%; }
+  .exploded .xlabel { display: none; }
+  .exploded .xpin { display: inline; }
+  .parts-legend {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px 16px;
+    margin: 20px 0 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: part;
+    font-size: 13.5px;
+    line-height: 1.45;
+    color: var(--muted);
+  }
+  .parts-legend li { position: relative; padding-left: 34px; counter-increment: part; }
+  .parts-legend li::before {
+    content: counter(part);
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: grid;
+    place-items: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--grad);
+    font: 600 12px/1 "Poppins", sans-serif;
+    color: #fff;
+  }
+  .parts-legend strong { display: block; font: 600 14.5px/1.35 "Poppins", sans-serif; color: var(--ink); }
+  .j-caps { grid-template-columns: 1fr; gap: 0; }
+  .j-caps .j-cap { display: grid; grid-template-columns: 30px 1fr; column-gap: 12px; margin-top: 16px; }
+  .j-caps .j-cap .j-num { grid-row: span 2; }
+  .j-caps .j-cap strong { margin: 2px 0 2px; }
+  .photo-hero-strip { grid-template-columns: repeat(2, 1fr); }
   .photo { border-radius: 14px; }
 }
 
