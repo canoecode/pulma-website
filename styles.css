@@ -377,6 +377,8 @@ svg.icon {
 
 .section--tight { padding-top: 0; }
 
+.section--snug { padding: clamp(40px, 5vw, 64px) 16px clamp(56px, 7vw, 88px); }
+
 .wrap { max-width: var(--wrap); margin: 0 auto; }
 
 .section-head {
@@ -803,6 +805,31 @@ a.patent-card:hover { transform: translateY(-2px); box-shadow: 0 14px 30px rgba(
 
 .site-footer .footer-patent a:hover { color: var(--blue); border-color: currentColor; }
 
+/* Consultant card: smaller member card, initials until photos arrive */
+.member--compact { padding: 40px 28px 36px; }
+
+.member--compact img,
+.member-initials {
+  width: 148px;
+  height: 148px;
+}
+
+.member-initials {
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 5px solid #fff;
+  background: var(--tint);
+  box-shadow: 0 0 0 3px var(--blue), 0 12px 30px rgba(60, 80, 160, 0.22);
+  font: 600 40px/1 "Poppins", sans-serif;
+  letter-spacing: 0.02em;
+  color: var(--blue);
+}
+
+.member--compact h3 { margin: 24px 0 12px; font-size: 21px; }
+
+.member--compact .role { max-width: 100%; padding: 9px 14px; font-size: 13px; letter-spacing: 0; text-align: center; }
+
 /* Deployment gallery ----------------------------------------------------- */
 
 .gallery {
@@ -942,14 +969,17 @@ a.patent-card:hover { transform: translateY(-2px); box-shadow: 0 14px 30px rgba(
 
 /* Six portrait columns; .w spans two, .b is a 3x2 lead photo */
 .gallery.step-photos {
-  grid-template-columns: repeat(6, 1fr);
-  grid-auto-rows: calc((100cqw - 50px) / 6 * 4 / 3);
+  --cols: 6;
+  grid-template-columns: repeat(var(--cols), 1fr);
+  grid-auto-rows: calc((100cqw - (var(--cols) - 1) * 10px) / var(--cols) * 4 / 3);
   grid-auto-flow: dense;
   gap: 10px;
   max-width: none;
 }
 
 .gallery.step-photos .photo { aspect-ratio: auto; border-radius: 12px; }
+
+.gallery.step-photos--5 { --cols: 5; }
 
 .step-photos .w { grid-column: span 2; }
 
@@ -1278,4 +1308,18 @@ a.patent-card:hover { transform: translateY(-2px); box-shadow: 0 14px 30px rgba(
   .photo-pair,
   .cards { grid-template-columns: 1fr; }
   .cards { gap: 14px; }
+  /* Consultants: avatar beside the name instead of stacked */
+  .member--compact {
+    display: grid;
+    grid-template-columns: 84px 1fr;
+    column-gap: 18px;
+    align-items: center;
+    justify-items: start;
+    padding: 18px 20px;
+    text-align: left;
+  }
+  .member--compact img,
+  .member-initials { grid-row: span 2; width: 84px; height: 84px; border-width: 3px; font-size: 24px; }
+  .member--compact h3 { margin: 0 0 8px; font-size: 18px; align-self: end; }
+  .member--compact .role { align-self: start; padding: 6px 14px; font-size: 12.5px; }
 }
