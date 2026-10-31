@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Patents – Pulma</title>
+  <meta name="description" content="Patent documentation for Pulma, Patent Number 2603006842.">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/favicon-192.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/images/favicon-48.png">
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.classList.add('js');</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js" defer></script>
+  <script src="patents.js" defer></script>
+</head>
+<body>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 13H8"/><path d="M16 17H8"/><path d="M16 13h-2"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></symbol>
+  </svg>
+
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Pulma home">
+      <img src="images/pulma-logo.png" alt="PULMA" width="900" height="172">
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="solution.html">Solution</a>
+      <a href="validation.html">Validation</a>
+      <a href="impact.html">Impact</a>
+      <a href="recognition.html">Recognition</a>
+      <a href="patents.html" aria-current="page">Patents</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="page-hero page-hero--compact grid-bg">
+      <p class="kicker">Patents</p>
+      <h1>Patent <span class="grad-text">Documentation</span></h1>
+      <div class="patent-badge">
+        <div class="badge-icon"><svg class="icon"><use href="#i-shield"/></svg></div>
+        <div>
+          <span>Thai Petty Patent</span>
+          <strong>2603006842</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--docs">
+      <div class="doc-group">
+        <div class="doc-group__head">
+          <span class="card-icon"><svg class="icon"><use href="#i-file"/></svg></span>
+          <div>
+            <h2>Invention Description &amp; Filing</h2>
+            <p>Select any page to open it in the full document.</p>
+          </div>
+          <a class="btn btn--ghost" href="docs/pulma-patent.pdf" target="_blank" rel="noopener">Open PDF <svg class="icon"><use href="#i-download"/></svg></a>
+        </div>
+        <ul class="doc-grid" role="list" data-pdf="docs/pulma-patent.pdf" data-label="Pulma patent documentation"></ul>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <img src="images/pulma-logo.png" alt="PULMA" width="900" height="172" loading="lazy">
+    <nav class="footer-nav" aria-label="Footer">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="solution.html">Solution</a>
+      <a href="validation.html">Validation</a>
+      <a href="impact.html">Impact</a>
+      <a href="recognition.html">Recognition</a>
+      <a href="patents.html">Patents</a>
+    </nav>
+    <p class="footer-patent"><a href="patents.html">Thai Petty Patent No. 2603006842</a></p>
+    <p class="fineprint">&copy; 2026 Pulma. For pre-screening and wellness tracking only; not a medical diagnosis.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

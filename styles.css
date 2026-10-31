@@ -715,6 +715,94 @@ svg.icon {
   color: var(--muted);
 }
 
+/* Patent documents ------------------------------------------------------- */
+
+.page-hero--compact .patent-badge { text-align: left; }
+
+.section--docs { padding-top: clamp(48px, 6vw, 72px); }
+
+.doc-group { max-width: var(--wrap); margin: 0 auto; }
+
+.doc-group__head {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.doc-group__head > div { flex: 1; }
+
+.doc-group__head h2 { font-size: clamp(22px, 2.6vw, 28px); font-weight: 700; line-height: 1.25; }
+
+.doc-group__head p { margin: 2px 0 0; color: var(--muted); font-size: 15px; }
+
+.doc-group__head .card-icon { background: #e9eefb; }
+
+.doc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 18px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.doc-thumb {
+  position: relative;
+  display: block;
+  aspect-ratio: 1 / 1.414;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 8px 22px rgba(16, 24, 58, 0.07);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.doc-thumb:hover { transform: translateY(-4px); box-shadow: 0 16px 34px rgba(16, 24, 58, 0.14); }
+
+/* Shimmer while the page is still rendering */
+.doc-thumb:not(.is-loaded)::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, #f3f5fb 30%, #e8ecf7 50%, #f3f5fb 70%);
+  background-size: 300% 100%;
+  animation: shimmer 1.4s linear infinite;
+}
+
+@keyframes shimmer { to { background-position: -150% 0; } }
+
+.doc-thumb canvas { display: block; width: 100%; height: 100%; object-fit: contain; }
+
+.doc-thumb__page {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  min-width: 26px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: var(--grad);
+  font: 600 12px/1.3 "Poppins", sans-serif;
+  text-align: center;
+  color: #fff;
+}
+
+.doc-error { grid-column: 1 / -1; color: var(--muted); }
+
+/* Patent number badges, cards and footer line link to the Patents page */
+a.patent-badge,
+a.patent-card { text-decoration: none; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+
+a.patent-badge:hover,
+a.patent-card:hover { transform: translateY(-2px); box-shadow: 0 14px 30px rgba(16, 24, 58, 0.12); }
+
+.patent-badge .badge-arrow { margin-left: 4px; color: var(--blue); }
+
+.site-footer .footer-patent a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--line); }
+
+.site-footer .footer-patent a:hover { color: var(--blue); border-color: currentColor; }
+
 /* Deployment gallery ----------------------------------------------------- */
 
 .gallery {
@@ -1179,6 +1267,9 @@ svg.icon {
   .j-caps .j-cap strong { margin: 2px 0 2px; }
   .photo-hero-strip { grid-template-columns: repeat(2, 1fr); }
   .photo { border-radius: 14px; }
+  .doc-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .doc-group__head { flex-wrap: wrap; }
+  .doc-group__head .btn { width: 100%; justify-content: center; }
 }
 
 @media (max-width: 560px) {
